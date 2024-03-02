@@ -1,0 +1,18 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        {% include "model-header.html" %}
+        <link rel="stylesheet" href="{% static 'bootstrap-5.3.3/css/bootstrap.min.css' %}">
+    </head>
+    <body class="bg-secondary">
+        {% include 'model-menu.html' %}
+        {% block content %}
+        {% endblock %}
+        <script src="{% static 'bootstrap-5.3.3/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'bootstrap-5.3.3/js/bootstrap.bundle.min.js' %}"></script>
+    </body>
+    <footer>
+        {% include "model-footer.html" %}
+    </footer>
+</html>

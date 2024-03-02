@@ -1,0 +1,48 @@
+{% load static %}
+
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="{% static 'bootstrap-5.3.3/css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'login.css' %}">
+        <title>Login - Agenda</title>
+
+    </head>
+    <body class="bg-custom d-flex align-center vh-100">
+        <div class="container-fluid row align-items-center ms-0">
+            <main class="form-signin">
+                <form action="submit" method="POST">
+                    {% csrf_token %}
+                    <h1 class="h2 mb-3 fw-normal text-white text-center">Login</h1>
+                    <div class="input-group mb-3">
+                        <div class="form-floating">
+                            <input id="name" type="text" class="form-control" name="username" placeholder="Username"
+                                   required>
+                            <label for="name">Usuário:</label>
+                        </div>
+                        <span class="input-group-text">@</span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input id="senha" type="password" class="form-control" name="password" placeholder="password"
+                               required autofocus>
+                        <label for="senha">Senha:</label>
+                    </div>
+                    <button class="btn btn-outline-primary w-100 py-2" type="submit">Entrar</button>
+                </form>
+                {% for message in messages %}
+                    <div class="alert alert-danger mt-3 alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            </main>
+        </div>
+        <script src="{% static 'bootstrap-5.3.3/js/bootstrap.js' %}"></script>
+        <script src="{% static 'bootstrap-5.3.3/js/bootstrap.bundle.js' %}"></script>
+    </body>
+
+</html>

@@ -1,0 +1,14 @@
+body {
+    background-color: #000000;
+}
+
+.form-signin {
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+.form-control:focus {
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.35rem rgba(13, 110, 253, 0.75);
+}

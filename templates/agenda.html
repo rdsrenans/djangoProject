@@ -1,0 +1,27 @@
+{% extends "model-page.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="py-5 text-center">
+            <h1>Agendamentos</h1>
+        </div>
+        <div class="row mw-100">
+            <table class="table table-sm table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">EVENTO</th>
+                        <th scope="col">DATA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for evento in eventos %}
+                        <tr>
+                            <th scope="row">{{ evento.titulo }}</th>
+                            <td>{{ evento.get_data_evento }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
