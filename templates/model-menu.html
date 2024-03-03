@@ -1,13 +1,19 @@
-<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom bg-black">
+<header class="d-flex flex-wrap align-items-center justify-content-md-between py-3 mb-4 border-bottom bg-black">
     <div class="col-md-2 mb-2 mb-md-0">
         <div>
             <span class="fs-4 px-5 text-white">Agenda</span>
         </div>
     </div>
     <div class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <button class="btn btn-outline-primary me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNovoEvento" aria-controls="offcanvasBottom">Home</button>
-        <button class="btn btn-outline-primary me-2">Cadastro</button>
-        <button class="btn btn-outline-primary me-2">Delete</button>
+        <button class="btn btn-outline-primary me-2" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNovoEvento" aria-controls="offcanvasBottom">Novo
+        </button>
+        <button class="btn btn-outline-primary me-2" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasAlterarEvento" aria-controls="offcanvasBottom">Alterar
+        </button>
+        <button class="btn btn-outline-primary me-2" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasExcluirEvento" aria-controls="offcanvasBottom">Excluir
+        </button>
     </div>
     <div class="col-md-2 text-end">
         <form action="/logout/">
@@ -15,15 +21,5 @@
                 Logout
             </button>
         </form>
-    </div>
-    
-    <div class="offcanvas offcanvas-bottom bg-black" data-bs-backdrop="static" tabindex="-1" id="offcanvasNovoEvento" aria-labelledby="offcanvasBottomLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title text-white" id="offcanvasBottomLabel">Novo evento</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body small">
-            ...
-        </div>
     </div>
 </header>

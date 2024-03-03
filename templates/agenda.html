@@ -1,12 +1,12 @@
 {% extends "model-page.html" %}
 
 {% block content %}
-    <div class="container">
+    <div class="container justify-content-center">
         <div class="py-5 text-center">
-            <h1>Agendamentos</h1>
+            <h1 class="text-white">Agendamentos</h1>
         </div>
-        <div class="row mw-100">
-            <table class="table table-sm table-dark">
+        <div class="m-auto w-50">
+            <table class="table table-sm table-dark text-sm-center">
                 <thead>
                     <tr>
                         <th scope="col">EVENTO</th>
@@ -22,6 +22,64 @@
                     {% endfor %}
                 </tbody>
             </table>
+        </div>
+    </div>
+
+    {# Area do OffCavas #}
+    <div class="offcanvas offcanvas-bottom bg-black" data-bs-backdrop="static" tabindex="-1" id="offcanvasNovoEvento"
+         aria-labelledby="offcanvasBottomLabel">
+        <div class="offcanvas-body small">
+            <div class="container text-center" style="min-width: 400px; max-width: 450px">
+                <div class="row align-items-center mb-3">
+                    <h5 class="offcanvas-title text-white col" id="offcanvasBottomLabel">Novo evento</h5>
+
+                </div>
+                <form action="submit" method="POST">
+                    {% csrf_token %}
+                    <div class="form-floating mb-3">
+                        <input id="name" type="text" class="form-control" name="evento" placeholder="Evento"
+                               required>
+                        <label for="name">Evento:</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input id="senha" type="datetime-local" class="form-control" name="date"
+                               placeholder="Data"
+                               required autofocus>
+                        <label for="senha">Data:</label>
+                    </div>
+                    <div class="btn-group w-100 py-2">
+                        <button class="btn btn-outline-primary btn-sm" type="submit">Salvar</button>
+                        <button class="btn btn-outline-primary btn-sm" type="button" data-bs-dismiss="offcanvas"
+                                aria-label="Close">Cancelar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-bottom bg-black" data-bs-backdrop="static" tabindex="-1"
+         id="offcanvasAlterarEvento"
+         aria-labelledby="offcanvasBottomLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-white" id="offcanvasBottomLabel">Alterar Evento</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body small">
+            ...
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-bottom bg-black" data-bs-backdrop="static" tabindex="-1" id="offcanvasExcluirEvento"
+         aria-labelledby="offcanvasBottomLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-white" id="offcanvasBottomLabel">Excluir Evento</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body small">
+            ...
         </div>
     </div>
 {% endblock %}

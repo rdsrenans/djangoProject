@@ -30,6 +30,14 @@ def submit_login(request):
 
     return redirect('/')
 
+@login_required(login_url='login/')
+def submit_novo(request):
+    if request.POST:
+        evento = request.POST.get('evento')
+        data = request.POST.get('data')
+
+        print(evento, data)
+
 
 @login_required(login_url='login/')
 def lista_eventos(request):
@@ -37,8 +45,3 @@ def lista_eventos(request):
     evento = Eventos.objects.filter(usuario=usuario)
     dados = {'eventos': evento}
     return render(request, 'agenda.html', dados)
-
-
-@login_required(login_url='login/')
-def evento(request):
-    return render(request, 'evento.html')
